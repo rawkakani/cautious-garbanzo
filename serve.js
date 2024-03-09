@@ -6,7 +6,12 @@ Deno.serve(async (_req) => {
     const evaluation_id = _req.url.split('/').pop()
     const kv = await Deno.openKv();
     const evaluation =  await kv.get(["evaluations", evaluation_id]);
-    return Response.json(evaluation.value, { status: 200 });
+    return Response.json(evaluation.value, { status: 200, headers:{
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, Origin'
+
+    } });
   }
 
   if (_req.method !== 'POST' || !_req.headers.has('content-type') ||
@@ -34,7 +39,12 @@ Deno.serve(async (_req) => {
       // Handle the uploaded file stream here (see step 2)
       const evaluation_id = evaluateBids(file);
 
-      return Response.json({id:evaluation_id}, { status: 200 });
+      return Response.json({id:evaluation_id}, { status: 200, headers:{
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization, Origin'
+
+      } });
     } catch (err) {
       console.error(err);
       return new Response('Internal server error', { status: 500 });
