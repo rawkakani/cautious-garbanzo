@@ -6,7 +6,7 @@ Deno.serve(async (_req) => {
     const evaluation_id = _req.url.split('/').pop()
     const kv = await Deno.openKv();
     const evaluation =  await kv.get(["evaluations", evaluation_id]);
-      return Response.json(evaluation.value, { status: 200 });
+    return Response.json(evaluation.value, { status: 200 });
   }
 
   if (_req.method !== 'POST' || !_req.headers.has('content-type') ||
