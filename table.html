@@ -23,7 +23,7 @@
         <!-- SIDE NAV LIST TABS -->
         <div class="mt-12">
             <ul class="flex flex-col space-y-3 text-gray-500  text-sm sidebar-menu">
-                <a href="index.html" class="flex space-x-3 items-center px-6 py-3 rounded-lg ">
+                <a href="index_draft.html" class="flex space-x-3 items-center px-6 py-3 rounded-lg ">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -34,7 +34,7 @@
                     <span>Dashboard</span>
                 </a>
 
-                <li class="flex space-x-3 items-center px-6 py-3 rounded-lg">
+                <li class="flex space-x-3 items-center px-6 py-3 rounded-lg bg-indigo-100">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -45,6 +45,8 @@
                     <span>Tables</span>
                 </li>
 
+                <!--
+
                 <li class="flex space-x-3 items-center px-6 py-3 rounded-lg">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -54,7 +56,7 @@
                         </svg>
                     </span>
                     <span>Report</span>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -64,25 +66,9 @@
     <div class="col-span-4 bg-gray-100 ">
 
         <!-- NAV BAR -->
-        <nav class="px-8 py-6 bg-white flex items-center justify-between">
-            <div class="">
-                <span class="text-gray-600">Hi</span>
-                <span class="text-gray-800 font-bold ml-1">{name}</span>
-                <div class="text-indigo-500 text-xs mt-1 font-semibold">{@userEmail}</div>
-            </div>
+        <nav class="px-8 py-6 bg-white flex items-center justify-end">
+
             <div class="flex items-center text-gray-500 space-x-8">
-                <div class="relative items-center content-center flex">
-                    <input type="text"
-                        class="text-xs bg-gray-100 pl-4 pr-10 py-3 rounded-md w-64 outline-none focus:ring-1"
-                        placeholder="Search for anything ...">
-                    <span class="text-gray-400 absolute right-4 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </span>
-                </div>
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -166,7 +152,7 @@
 
   fetch(`https://posh-moth-96.deno.dev/${evaulation_id}`).then(async res => {
     const result  = await res.json()
-
+    console.log(result)
     for (key in result){
 
 
