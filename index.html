@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="style/style.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <title>Dashboard</title>
 </head>
 
@@ -44,7 +44,7 @@
                     </span>
                     <span>Tables</span>
                 </li>
-               
+
                 <li class="flex space-x-3 items-center px-6 py-3 rounded-lg">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -112,7 +112,7 @@
 
         <!-- Main Section -->
         <section class="px-8 py-6">
-            
+
             <!-- PENDING EVALUATIONS -->
             <section class="grid grid-cols-3 gap-x-6 mt-6">
 
@@ -207,12 +207,12 @@
                     </div>
 
                     <!-- TABLE FOR LIST OF COMPLETED EVALUATIONS -->
-                
+
                     <div class="flex flex-col mt-6 bg-white custom-border rounded-2xl ">
                         <div class="relative overflow-x-auto shadow-md rounded-xl">
                             <table class="w-full text-sm text-left text-gray-500  custom-border">
                                 <caption class="p-5 text-lg font-semibold text-gray-900 bg-white">
-                                  
+
                                     <p class="text-sm font-normal text-gray-500 dark:text-gray-400 text-left">Recent Projects</p>
                                 </caption>
                                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400">
@@ -244,7 +244,7 @@
                 <section class="col-span-1 bg-white h-full rounded-2xl px-2 pt-10 pb-6">
                     <div id="calculator" class="mx-auto w-full text-center flex justify-center">
                         <div class="relative w-full  bg-white flex  items-center flex-col text-gray-500 text-sm p-2 space-y-4">
-                           
+
                             <h4 class="">New Evaluations</h4>
                             <form id="evaluation_form" class="flex flex-col space-y-4">
 
@@ -271,8 +271,8 @@
 
                                 <button class="p-2 rounded bg-indigo-100" type="submit"> Start New Evaluation</button>
                             </form>
-            
-                            
+
+
                         </div>
                     </div>
 
@@ -282,13 +282,13 @@
                     </div>
                     <div class="w-full mt-10">
                         <div class="z-20 w-full text-center">
-                            
+
                         </div>
-                        
+
                     </div>
 
-                    
-               
+
+
                 </section>
                 <!-- /profile -->
 
@@ -309,7 +309,7 @@
         document.getElementById('calculator').classList.add('hidden');
         document.getElementById('calculator').classList.remove('flex');
 
-        
+
         document.getElementById('loading').classList.add('flex');
         document.getElementById('loading').classList.remove('hidden');
 
@@ -320,8 +320,8 @@
         }).then(async response => {
             const calc = await response.json();
             document.getElementById('view_combination').classList.remove('hidden');
-            document.getElementById('view_combination').href = `https://posh-moth-96.deno.dev/${calc.id}`
-        
+            document.getElementById('view_combination').href = `table.html?id=${calc.id}`
+
         }).catch(error => {
             console.error(error);
         });
