@@ -1,6 +1,6 @@
 ## AMAC 7 Pro
 ### How to use
-1. Download the [EvaluationSample.xlxs file](/EvaluationSample.xlxs)
+1. Download the [EvaluationSample.xlsx file](/EvaluationSample.xlsx)
 2. Go to the [app](https://rawkakani.github.io/cautious-garbanzo/) and upload the evaluation samples file
 3. Enter the following information:
     * Name of the evaluation
